@@ -1,55 +1,59 @@
 <div id="moon-phase-widget"></div>
 <style>
 .mph-widget {
-  /*width: 225px;
-  min-height: 350px;*/
-  height: auto;
-  word-break: break-all;
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  border-radius: 15px;
-  background-color: white;
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
-  font-family: Helvetica, sans-serif;
-  color: #212121;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: normal;
+    width: 400px;
+    /*height: 300px;*/
+    /*width: auto;*/
+    height: auto;
+    word-break: break-all;
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    font-family: Helvetica, sans-serif;
+    color: #212121;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: normal;
 }
 [data-style="small"] .mph-widget {
-  font-size: 12px;
-  /*width: 160px;
-  min-height: 300px;*/
-  height: auto;
+    font-size: 12px;
+    width: 160px;
+    min-height: 300px;
+    height: auto;
 }
 [data-style="horizontal"] .mph-widget {
-  font-size: 12px;
-  /*width: 320px;
-  min-height: 160px;*/
-  height: auto;
+    font-size: 12px;
+    width: 320px;
+    min-height: 160px;
+    height: auto;
 }
 .mph-widget-body {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
 }
 [data-style="horizontal"] .mph-widget-body {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
 }
 .mph-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 7px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
 }
 .mph-col {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 [data-style="horizontal"] .mph-col {
   width: 500%;
@@ -60,14 +64,11 @@
 .mph-widget .moon-phase-ico img {
   width: 100%;
 }
-.mph-row.mph-link {
-  margin-top: auto;
-}
 .moon-time {
   margin-left: 5px;
 }
 .mph-row .current-date {
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   font-weight: bold;
   font-size: 1em;
 }
@@ -80,17 +81,6 @@
 }
 [data-style="horizontal"] .phase-name{
   margin-top: 10px;
-}
-.mph-link a {
-  text-decoration: underline;
-}
-.mph-link a:link, .mph-link a:visited {
-  color: #212121;
-  text-decoration: underline;
-}
-.mph-link a:hover, .mph-link a:active {
-  color: #0000EE;
-  text-decoration: underline;
 }
 </style>
 
@@ -206,7 +196,7 @@
     function (n, t, e) {
       "use strict";
       t.a = function (n, t) {
-        return `\n<div class="mph-widget">\n    <div class="mph-widget-body">\n        <div class="mph-col">\n            <div class="mph-row">\n                <div class="current-date">${n.dateFmt}</div>\n            </div>\n            <div class="mph-row">\n                <div class="current-place">${t.city}, ${t.country}</div>\n            </div>\n            <div class="mph-row">\n                <div class="moon-phase-ico">\n                    <img src="${n.phaseIco}" />\n                </div>\n            </div>\n        </div>\n        <div class="mph-col">\n            <div class="mph-row">\n                <div class="phase-name">${n.phase}</div>\n            </div>\n            <div class="mph-row">\n                <div class="zodiac-name">Moon in <strong>${n.zodiac}</strong></div>\n            </div>\n            <div class="mph-row">\n                <div>Set: </div>\n                <div class="moon-time">${n.set}</div>\n            </div>\n            <div class="mph-row">\n                <div>Rise: </div>\n                <div class="moon-time">${n.rise}</div>\n`;
+        return `\n<div class="mph-widget">\n    <div class="mph-widget-body">\n        <div class="mph-col">\n            <div class="mph-row">\n                <div class="current-date">${n.dateFmt}</div>\n            </div>\n            <div class="mph-row">\n                <div class="moon-phase-ico">\n                    <img src="${n.phaseIco}" />\n                </div>\n            </div>\n        </div>\n        <div class="mph-col">\n            <div class="mph-row">\n                <div class="phase-name">${n.phase}</div>\n            </div>\n            <div class="mph-row">\n                <div class="zodiac-name">Moon in <strong>${n.zodiac}</strong></div>\n            </div>\n            <div class="mph-row">\n                <div>Set: </div>\n                <div class="moon-time">${n.set}</div>\n            </div>\n            <div class="mph-row">\n                <div>Rise: </div>\n                <div class="moon-time">${n.rise}</div>\n`;
       };
     },
     function (n, t, e) {
